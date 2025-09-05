@@ -1,5 +1,3 @@
-const cityService = require('../services/city-service')
-
-const cityService=new cityService();
-
-module.exports=cityService;
+const CityService = require('./city-service'); 
+const cityservice = new CityService();
+module.exports = { cityservice };
