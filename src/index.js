@@ -1,6 +1,6 @@
-
+const express = require('express')
 const CityRepository=require('./repository/city-repository')
-const {PORT,express}=require('./config/serverConfig');
+const {PORT}=require('./config/serverConfig');
 const { urlencoded } = require("body-parser");
 const cityRoutes = require('./routes/index')
 
