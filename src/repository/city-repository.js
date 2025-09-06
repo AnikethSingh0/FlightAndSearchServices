@@ -24,11 +24,14 @@ class CityRepository {
 
     async updateCity(cityid, data) {
         try {
-            await City.update(data, {
-                where: {
-                    id: cityid 
-                }  
-            });
+            // await City.update(data, {
+            //     where: {
+            //         id: cityid 
+            //     }  
+            // });
+            const temp = await City.findByPk(cityid);
+            temp.name=data;
+            return temp;
         } catch (err) {
             console.log("error in updateCity");
             throw err;
@@ -38,6 +41,16 @@ class CityRepository {
     async getCity(cityid) {
         try {
             const city = await City.findByPk(cityid);
+            return city;
+        } catch (err) {
+            console.log("something went wrong in repository");
+            throw err;
+        }
+    }
+
+    async getAllCity(){
+        try {
+            const city = await City.findAll();
             return city;
         } catch (err) {
             console.log("something went wrong in repository");

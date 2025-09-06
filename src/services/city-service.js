@@ -15,6 +15,16 @@ class CityService {
         }
     }
 
+    async getAllCity(){
+        try {
+            const response = await this.CityRepository.getAllCity();
+            return response;
+        } catch (err) {
+            console.log("Error in CityService - getCity");
+            throw err;
+        }
+    }
+
     async updateCity(cityid, data) {
         try {
             const response = await this.CityRepository.updateCity(cityid, data);

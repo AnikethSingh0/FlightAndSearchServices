@@ -20,6 +20,25 @@ const create = async(req,res)=>{
     }
     
 }
+const getAll = async(req,res)=>{
+    try{
+        const city = await cityservice.getAllCity();
+        return res.status(201).json({
+            data : city,
+            success : true,
+            message : "Successfully created a city",
+            err:{}
+        });
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({
+            data : {},
+            success : false,
+            message : "Unsuccessfully creation of city",
+            error:err
+        })
+    }
+}
 const destroy = async(req,res)=>{
     try{
         const city= await cityservice.deleteCity(req.params.id);
@@ -81,5 +100,6 @@ module.exports={
     create,
     destroy,
     get,
-    update
+    update,
+    getAll
 }
