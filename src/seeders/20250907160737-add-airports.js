@@ -12,6 +12,26 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+   await queryInterface.bulkInsert('Airports', [
+  {
+    name: 'Indira Gandhi International Airport',
+    cityId: 20,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    name: 'Chhatrapati Shivaji Maharaj International Airport',
+    cityId: 20,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+    name: 'Kempegowda International Airport',
+    cityId: 20,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+], {});
   },
 
   async down (queryInterface, Sequelize) {
