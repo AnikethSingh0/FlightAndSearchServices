@@ -5,7 +5,8 @@ const { urlencoded } = require("body-parser");
 const cityRoutes = require("./routes/index");
 const { City, Airport } = require("./models/index.js");
 const db = require("./models/index.js");
-const airportRoutes = require("./routes/v1/airport-routes")
+const airportRoutes = require("./routes/v1/airport-routes");
+const airplane = require("./models/airplane.js");
 const setupAndStartServer = async () => {
   const app = express();
 
