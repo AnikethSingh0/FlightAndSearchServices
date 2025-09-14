@@ -6,6 +6,7 @@ const cityRoutes = require("./routes/index");
 const { City, Airport } = require("./models/index.js");
 const db = require("./models/index.js");
 const airportRoutes = require("./routes/v1/airport-routes");
+const flightRoutes = require("./routes/v1/flight-routes.js")
 const airplane = require("./models/airplane.js");
 const setupAndStartServer = async () => {
   const app = express();
@@ -15,6 +16,7 @@ const setupAndStartServer = async () => {
 
   app.use("/api", cityRoutes);
   app.use("/api/v1", airportRoutes);
+   app.use("/api/v1", flightRoutes);
 
   // if (process.env.DB_SYNC) {
   //   await db.sequelize.sync({ alter: true });
