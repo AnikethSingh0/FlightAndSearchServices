@@ -1,7 +1,7 @@
-const dateTime = (dateTime1,dateTime2)=>{
-    const x = new Date(dateTime1);
-    const y = new Date(dateTime2);
-    return x.getTime() < y.getTime()
+const dateTime = (departureTime, arrivalTime) => {
+    const departure = new Date(departureTime);
+    const arrival = new Date(arrivalTime);
+    return departure.getTime() < arrival.getTime()
 }
 module.exports = {
     dateTime,
